@@ -19,3 +19,13 @@ This ZIP is ready for GitHub Pages. Upload all files from the ZIP to the **root*
 4. Follow the published URL shown in Pages settings when deployment finishes.
 
 The notes are concise original summaries and are **publicly readable and copyable** when published. The external resources linked on the notes pages remain on their publishers' websites. Do not put private or restricted books in the repository.
+
+## Help Google discover the site
+
+1. Confirm the exact public GitHub Pages URL in **Settings → Pages**. The repository URL is different from the Pages website URL.
+2. Add the exact Pages URL as a URL-prefix property in [Google Search Console](https://search.google.com/search-console/about) and verify ownership.
+3. Inspect the homepage URL and request indexing. Check `notes.html` as well.
+4. Link to the live Pages URL from your GitHub profile and academic profiles.
+5. Check `site:YOUR-EXACT-PAGES-URL` after Google has crawled it. Search position is not guaranteed.
+
+Once the permanent Pages URL is known, canonical tags and a sitemap can use that exact address.
