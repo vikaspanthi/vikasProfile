@@ -22,8 +22,33 @@
                 empty.hidden = [...list.children].some(item => !item.hidden);
             });
         };
-        publicationSearch.addEventListener('input', updatePublications);
-        updatePublications();
+        if (publicationSearch) {
+            publicationSearch.addEventListener('input', updatePublications);
+            updatePublications();
+        }
+
+        const topicSearch = document.querySelector('#topic-search');
+        if (topicSearch) {
+            const cards = [...document.querySelectorAll('.topic-card')];
+            const count = document.querySelector('#topic-count');
+            const empty = document.querySelector('#topic-empty');
+            const updateTopics = () => {
+                const query = topicSearch.value.trim().toLocaleLowerCase();
+                let visible = 0;
+                cards.forEach(card => {
+                    card.hidden = !card.textContent.toLocaleLowerCase().includes(query);
+                    if (!card.hidden) visible++;
+                });
+                document.querySelectorAll('.subject-title').forEach(title => {
+                    const grid = title.nextElementSibling;
+                    title.hidden = ![...grid.children].some(card => !card.hidden);
+                });
+                count.textContent = `${visible} of ${cards.length} topics`;
+                empty.hidden = visible !== 0;
+            };
+            topicSearch.addEventListener('input', updateTopics);
+            updateTopics();
+        }
 
         const topButton = document.querySelector('.back-top');
         const progress = document.querySelector('.reading-progress');
@@ -39,7 +64,8 @@
             topButton.classList.toggle('visible', window.scrollY > 550);
             let current = 'identity';
             navLinks.forEach(link => {
-                const target = document.querySelector(link.getAttribute('href'));
+                const href = link.getAttribute('href');
+                const target = href.startsWith('#') ? document.querySelector(href) : null;
                 if (target && target.getBoundingClientRect().top <= 180) current = target.id;
             });
             navLinks.forEach(link => {
