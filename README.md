@@ -1,18 +1,21 @@
-# Dr. Vikas Panthi — academic website
+# Dr. Vikas Panthi — academic website and teaching notes
 
-This folder is ready for GitHub Pages. Keep these files together at the repository root:
+This ZIP is ready for GitHub Pages. Upload all files from the ZIP to the **root** of one GitHub repository, preserving their filenames.
 
 - `index.html` — academic profile homepage
-- `notes.html` — public, concise teaching notes
-- `style.css` — layout and animations
-- `script.js` — search and interactive controls
-- `profile-portrait.png` — professional header portrait
+- `notes.html` — subject directory for original notes
+- `external-materials.html` — external course link directory (files remain on the publisher’s site)
+- `python.html` — Python Programming notes
+- `operating-systems.html` — Operating Systems notes
+- `software-engineering.html` — Software Engineering notes
+- `style.css` and `script.js` — styling and interactions shared by all pages
+- `profile-portrait.png` — homepage portrait
 
-## Publish
+## Publish on GitHub Pages
 
-1. Create a GitHub repository and upload the five site files above to its root.
-2. Open repository **Settings → Pages**.
-3. Under **Build and deployment**, select **Deploy from a branch**, then choose the default branch and **/(root)** folder; save.
-4. Open the Pages URL shown in Settings after deployment finishes.
+1. Create a GitHub repository and upload the site files listed above to its root.
+2. Open the repository's **Settings → Pages**.
+3. Select **Deploy from a branch**, your default branch, and **/(root)**; save.
+4. Follow the published URL shown in Pages settings when deployment finishes.
 
-The teaching notes in `notes.html` are publicly readable and copyable when published. Do not add private or restricted books to this repository or ZIP.
+The notes are concise original summaries and are **publicly readable and copyable** when published. The external resources linked on the notes pages remain on their publishers' websites. Do not put private or restricted books in the repository.

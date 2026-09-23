@@ -49,6 +49,16 @@
             topicSearch.addEventListener('input', updateTopics);
             updateTopics();
         }
+        document.querySelectorAll('.notion-toc a').forEach(link => {
+            link.addEventListener('click', () => {
+                const target = document.querySelector(link.getAttribute('href'));
+                if (target instanceof HTMLDetailsElement) target.open = true;
+            });
+        });
+        if (location.hash.startsWith('#topic-')) {
+            const target = document.querySelector(location.hash);
+            if (target instanceof HTMLDetailsElement) target.open = true;
+        }
 
         const topButton = document.querySelector('.back-top');
         const progress = document.querySelector('.reading-progress');

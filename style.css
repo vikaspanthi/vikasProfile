@@ -535,3 +535,82 @@
     .hero-portrait img { height: 300px; }
 }
 @media (max-width: 440px) { .hero-portrait { width: min(100%,250px); } }
+
+/* Subject directory inspired by the reference's calm document hierarchy */
+.notion-layout { background: #fff; color: #30363d; }
+.notion-layout .hud-nav { background: rgba(255,255,255,.96); box-shadow: 0 3px 18px rgba(40,54,72,.08); }
+.notion-cover { height: clamp(150px,22vw,260px); max-width: 1200px; margin: 1.5rem auto 0; border-radius: 18px;
+    background: linear-gradient(115deg,#e8f2fd 4%,#d4e8ef 55%,#dbf2e6); position: relative; overflow: hidden; }
+.notion-cover::before { content: ''; position: absolute; width: 330px; height: 330px; border-radius: 50%;
+    top: -180px; right: 16%; background: rgba(255,255,255,.35); }
+.notion-cover::after { content: ''; position: absolute; width: 300px; height: 300px; border-radius: 50%;
+    bottom: -210px; left: 9%; background: rgba(255,255,255,.32); }
+.cover-python { background: linear-gradient(120deg,#d5e8fa,#e8f4e6); }
+.cover-operating-systems { background: linear-gradient(120deg,#dce6f8,#e3e7f9); }
+.cover-software-engineering { background: linear-gradient(120deg,#f4e6e2,#ebeffc); }
+.notion-main { max-width: 980px; margin: -31px auto 5rem; padding: 0 2rem; position: relative; }
+.notion-main .crumb { margin: 3.3rem 0 .5rem; font-size: .8rem; color: #747b85; }
+.notion-main .crumb a { color: #697581; text-decoration: none; }
+.notion-main .crumb a:hover { text-decoration: underline; }
+.notion-icon { display: grid; place-items: center; width: 66px; height: 66px; font-size: 2.2rem; border-radius: 17px;
+    background: white; box-shadow: 0 6px 20px rgba(45,71,103,.13); margin-top: -34px; }
+.notion-main h1 { font-size: clamp(2.25rem,5vw,3.5rem); letter-spacing: -.045em; color: #252a33; line-height: 1.12; margin: .55rem 0 .7rem; }
+.notion-lead { color: #626e7b; max-width: 66ch; font-size: 1rem; }
+.notion-meta { color: #7e8992; font-size: .82rem; margin: 1rem 0 2rem; }
+.notion-divider { height: 1px; background: #e7e9eb; margin: 2rem 0; }
+.notion-section-heading { border: 0; padding: 0; margin: 0 0 1rem; text-transform: none; color: #2b3542; font-size: 1.2rem; }
+.notion-section-heading::before { content: none; }
+.notion-subject-list { display: grid; gap: .6rem; }
+.notion-subject-card { display: flex; align-items: center; gap: 1rem; padding: 1.1rem 1.3rem; color: #2f3a46;
+    text-decoration: none; border: 1px solid #e5eaf0; border-radius: 12px; background: #fff;
+    transition: background .2s, transform .2s, border-color .2s; }
+.notion-subject-card:hover { background: #f6f9fc; border-color: #b6d1e8; transform: translateX(4px); }
+.notion-subject-card .subject-icon { display: grid; place-items: center; flex: 0 0 45px; height: 45px;
+    background: #edf4fa; border-radius: 10px; font-size: 1.25rem; }
+.notion-subject-card strong, .notion-subject-card small { display: block; }
+.notion-subject-card strong { font-size: 1rem; }
+.notion-subject-card small { color: #7b8793; margin-top: .12rem; }
+.card-arrow { margin-left: auto; color: #7796b4; font-size: 1.2rem; }
+.notion-callout { margin-top: 2rem; padding: 1.25rem; background: #edf5fb; border-radius: 10px; border-left: 4px solid #79aace; }
+.notion-callout p { margin-top: .35rem; color: #5b6b79; }
+.notion-columns { display: grid; grid-template-columns: 220px minmax(0,1fr); gap: 2rem; align-items: start; }
+.notion-toc { position: sticky; top: 110px; display: grid; gap: .2rem; max-height: calc(100vh - 130px); overflow-y: auto; }
+.notion-toc h2 { font-size: .8rem; color: #7b8793; margin: 0 0 .5rem; padding: 0; border: 0; text-transform: uppercase; }
+.notion-toc h2::before { content: none; }
+.notion-toc a { color: #526373; text-decoration: none; padding: .5rem .6rem; border-radius: 7px; font-size: .82rem; }
+.notion-toc a:hover { background: #eff5fa; color: #235e95; }
+.notion-toc a span { color: #8496a6; padding-right: .55rem; }
+.notion-contents .topic-grid { grid-template-columns: 1fr; gap: .65rem; }
+.notion-contents .topic-card { border-radius: 8px; box-shadow: none; border-color: #e5e9ed; scroll-margin-top: 110px; }
+.notion-contents .topic-card summary { min-height: 65px; padding: .8rem 1rem; }
+.notion-contents .topic-body { padding: 0 1rem 1.2rem; }
+.notion-search { display: grid; gap: .35rem; font-weight: 600; color: #607183; font-size: .8rem; }
+.notion-search input { width: 100%; padding: .7rem .9rem; border: 1px solid #d4dfe7; border-radius: 8px;
+    font: inherit; font-size: .95rem; background: #fff; color: #25394f; }
+.notion-next { margin-top: 2rem; }
+.notion-next a { color: #2b6ea7; text-decoration: none; }
+.notion-next a:hover { text-decoration: underline; }
+@media (max-width: 750px) {
+ .notion-cover { margin: 1rem 1rem 0; }
+ .notion-main { padding: 0 1.2rem; }
+ .notion-columns { grid-template-columns: 1fr; gap: 1rem; }
+ .notion-toc { position: static; max-height: none; display: flex; overflow-x: auto; padding-bottom: .6rem; }
+ .notion-toc h2 { display: none; }
+ .notion-toc a { white-space: nowrap; background: #f3f7fa; }
+}
+.notion-external { margin-top: 2rem; padding: 1.25rem 1.4rem; border-radius: 10px; border: 1px solid #e4eaf0; background: #f9fbfd; }
+.notion-external h2 { color: #2c4258; font-size: 1rem; text-transform: none; margin: 0 0 .5rem; padding: 0; border: 0; }
+.notion-external h2::before { content: none; }
+.notion-external p { color: #627181; margin-bottom: .5rem; }
+.notion-external a { color: #246ba4; }
+.cover-external { background: linear-gradient(120deg,#dcebf3,#e9e8f6,#f4ebe2); }
+.resource-heading { margin-top: 2.2rem; }
+.resource-list { list-style: none; display: grid; gap: .45rem; padding: 0; }
+.resource-list a { display: flex; align-items: center; gap: 1rem; padding: .9rem 1rem; border: 1px solid #e4eaf0;
+    border-radius: 8px; color: #29455f; text-decoration: none; transition: background .2s, border-color .2s; }
+.resource-list a:hover { background: #f2f8fc; border-color: #adc9df; }
+.resource-code { color: #687d90; font-size: .8rem; min-width: 95px; }
+.resource-arrow { margin-left: auto; color: #4c83ae; }
+.resource-credit { margin: 1.3rem 0; color: #71808c; font-size: .85rem; }
+@media (max-width: 550px) { .resource-list a { gap: .5rem; align-items: flex-start; }
+    .resource-code { min-width: 75px; font-size: .7rem; } }
