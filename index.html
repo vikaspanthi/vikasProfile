@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Vikas Panthi | Portfolio</title>
+    <style>
+        :root {
+            --bg-primary: #0f172a;
+            --bg-secondary: #1e293b;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --accent: #38bdf8;
+            --accent-hover: #7dd3fc;
+            --card-border: #334155;
+            --success: #4ade80;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        header {
+            background-color: rgba(30, 41, 59, 0.8);
+            backdrop-filter: blur(8px);
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            border-bottom: 1px solid var(--card-border);
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+        }
+
+        .logo {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 1.5rem;
+        }
+
+        .nav-links a {
+            color: var(--text-main);
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        .hero {
+            padding: 8rem 2rem 4rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background-color: rgba(56, 189, 248, 0.1);
+            color: var(--accent);
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            width: fit-content;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            letter-spacing: -0.025em;
+            background: linear-gradient(to right, #fff, #94a3b8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-title {
+            font-size: 1.5rem;
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        .hero-univ {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+        }
+
+        .hero-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin-top: 1rem;
+            font-size: 0.95rem;
+        }
+
+        .hero-meta a, .hero-meta span {
+            color: var(--text-main);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .hero-meta a:hover {
+            color: var(--accent);
+        }
+
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        section {
+            padding: 4rem 0 2rem 0;
+            border-bottom: 1px solid var(--card-border);
+        }
+
+        section:last-child {
+            border-bottom: none;
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: -6px;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background-color: var(--accent);
+            border-radius: 2px;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+
+        @media (min-width: 768px) {
+            .grid-2 {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .card {
+            background-color: var(--bg-secondary);
+            border: 1px solid var(--card-border);
+            border-radius: 12px;
+            padding: 1.75rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        .card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-main);
+        }
+
+        .card-sub {
+            color: var(--accent);
+            font-size: 0.95rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .card-meta {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+        }
+
+        .skills-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .skills-group h4 {
+            font-size: 1rem;
+            color: var(--text-muted);
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .tag {
+            background-color: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--card-border);
+            padding: 0.35rem 0.75rem;
+            border-radius: 6px;
+            font-size: 0.85rem;
+        }
+
+        .stat-banner {
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+            border: 1px solid var(--card-border);
+            border-radius: 12px;
+            padding: 2rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .stat-item h3 {
+            font-size: 2.5rem;
+            color: var(--accent);
+            font-weight: 800;
+        }
+
+        .stat-item p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        .pub-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
+        }
+
+        .pub-item {
+            border-left: 3px solid var(--card-border);
+            padding-left: 1rem;
+            transition: border-color 0.2s;
+        }
+
+        .pub-item:hover {
+            border-left-color: var(--accent);
+        }
+
+        .pub-title {
+            font-weight: 600;
+            color: var(--text-main);
+        }
+
+        .pub-meta {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-top: 0.25rem;
+        }
+
+        .pub-link {
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 0.85rem;
+            word-break: break-all;
+        }
+
+        .pub-link:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            background-color: var(--bg-secondary);
+            border-top: 1px solid var(--card-border);
+            padding: 2rem;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <a href="#" class="logo">Dr. Vikas Panthi</a>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#research">Research</a></li>
+                <li><a href="#publications">Publications</a></li>
+                <li><a href="#skills">Skills</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <span class="hero-badge">HOD - BCE</span>
+        <h1>Dr. VIKAS PANTHI</h1>
+        <div class="hero-title">Senior Assistant Professor</div>
+        <div class="hero-univ">School of Computing Science & Engineering<br>Vellore Institute of Technology, Bhopal University, India</div>
+        
+        <div class="hero-meta">
+            <span>📞 09778460751</span>
+            <a href="mailto:vpanthi@gmail.com">✉️ vpanthi@gmail.com</a>
+            <a href="mailto:vikas.panthi@vitbhopal.ac.in">✉️ vikas.panthi@vitbhopal.ac.in</a>
+        </div>
+    </section>
+
+    <main>
+        <section id="about">
+            <h2>About & Research Focus</h2>
+            <p style="font-size: 1.1rem; margin-bottom: 1.5rem; color: var(--text-muted);">
+                Dedicated academician and researcher specializing in <strong>Software Engineering</strong> and <strong>Software Testing</strong>. Broad research focus centers heavily around generation and prioritization of test scenarios for object-oriented systems and web applications using evolutionary & optimization algorithms.
+            </p>
+            <div class="stat-banner">
+                <div class="stat-item">
+                    <h3>₹13.79L</h3>
+                    <p>Research Grants</p>
+                </div>
+                <div class="stat-item">
+                    <h3>3</h3>
+                    <p>Patents Published</p>
+                </div>
+                <div class="stat-item">
+                    <h3>20+</h3>
+                    <p>Journals & Conferences</p>
+                </div>
+                <div class="stat-item">
+                    <h3>1</h3>
+                    <p>Academic Book</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="experience">
+            <h2>Academic Journey</h2>
+            <div class="grid-2">
+                <div class="card">
+                    <span class="hero-badge" style="background-color: rgba(74, 222, 128, 0.1); color: var(--success)">Experience</span>
+                    <div style="margin-top: 1rem;">
+                        <h3>Vellore Institute of Technology (VIT), Bhopal</h3>
+                        <p class="card-sub">Senior Assistant Professor & HOD-BCE</p>
+                        <p class="card-meta">Nov 2020 — Present</p>
+                    </div>
+                    <div style="margin-top: 1rem; border-top: 1px solid var(--card-border); padding-top: 1rem;">
+                        <h3>Rajasthan Technical University, Kota</h3>
+                        <p class="card-sub">Contractual Faculty (TEQIP-III NPIU, MHRD)</p>
+                        <p class="card-meta">Jan 2018 — Nov 2020</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <span class="hero-badge">Education</span>
+                    <div style="margin-top: 1rem;">
+                        <h3>Ph.D. in Computer Science & Engineering</h3>
+                        <p class="card-sub">National Institute of Technology (NIT), Rourkela</p>
+                        <p class="card-meta">Dec 2017 | Specialization: Software Engineering (1st Div)</p>
+                    </div>
+                    <div style="margin-top: 1rem; border-top: 1px solid var(--card-border); padding-top: 1rem;">
+                        <h3>M.Tech in Computer Science & Engineering</h3>
+                        <p class="card-sub">National Institute of Technology (NIT), Rourkela</p>
+                        <p class="card-meta">June 2012 | Specialization: Software Engineering (1st Div)</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="research">
+            <h2>Research & Innovations</h2>
+            <div class="grid-2">
+                <div class="card">
+                    <h3>Funded Research Project</h3>
+                    <p class="card-sub">Principal Investigator</p>
+                    <p style="color: var(--text-muted); margin-bottom: 1rem;">
+                        "Test Case Generation, Optimization and Prioritization using Evolutionary Techniques" under TEQIP Collaborative Research Scheme, University College of Engineering, RTU Kota.
+                    </p>
+                    <span class="hero-badge" style="background-color: rgba(74, 222, 128, 0.1); color: var(--success)">Grant: ₹13.79 Lakh | June 2019</span>
+                </div>
+
+                <div class="card">
+                    <h3>Published Intellectual Patents</h3>
+                    <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.75rem;">
+                        <li>
+                            <strong>• Computing Device for Energy & Utility Data Analytics</strong> 
+                            <div class="card-meta" style="margin: 0;">Design No. 501465-001 | Registered July 2026</div>
+                        </li>
+                        <li>
+                            <strong>• Smart Sleep Quality Monitoring Device</strong> 
+                            <div class="card-meta" style="margin: 0;">Registered Design | July 2025</div>
+                        </li>
+                        <li>
+                            <strong>• Virtual Reality Based Device for Treating Autism Spectrum Disorders</strong> 
+                            <div class="card-meta" style="margin: 0;">Registered Indian Design | April 2025</div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="publications">
+            <h2>Selected Publications & Books</h2>
+            <div class="pub-list">
+                <div class="pub-item">
+                    <div class="pub-title">Book: Test Case Generation using behavioral & Interaction models: With Implementation</div>
+                    <div class="pub-meta">LAP LAMBERT Academic Publishing, 2012 | ISBN-10: 3659260177</div>
+                </div>
+                <div class="pub-item">
+                    <div class="pub-title">Software validation based on prioritization using concurrent activity diagram</div>
+                    <div class="pub-meta">International Journal System Assurance Engineering Management (Springer-2022)</div>
+                    <a href="https://doi.org/10.1007/s13198-021-01551-8" class="pub-link" target="_blank">https://doi.org/10.1007/s13198-021-01551-8</a>
+                </div>
+                <div class="pub-item">
+                    <div class="pub-title">Firefly Optimization Technique Based Test Scenarios Generation and Prioritization</div>
+                    <div class="pub-meta">Journal of Applied Research and Technology (Elsevier-2018), Vol-16, pp 466-483.</div>
+                </div>
+                <div class="pub-item">
+                    <div class="pub-title">Leveraging Multimodal Data and Deep Learning for Enhanced Stock Market Prediction</div>
+                    <div class="pub-meta">Book Chapter: AI-Based Advanced Optimization Techniques for Edge Computing (Wiley Online Library, March 2025)</div>
+                </div>
+                <div class="pub-item">
+                    <div class="pub-title">ACO based Embedded System Testing using UML Activity Diagram</div>
+                    <div class="pub-meta">IEEE TENCON-2016- Technologies for Smart nation, Singapore</div>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills">
+            <h2>Technical Skills & Expertise</h2>
+            <div class="card">
+                <div class="skills-group">
+                    <h4>Core Languages</h4>
+                    <div class="tags">
+                        <span class="tag">Java</span>
+                        <span class="tag">Python Programming</span>
+                        <span class="tag">C</span>
+                        <span class="tag">C++</span>
+                    </div>
+                </div>
+                <div class="skills-group">
+                    <h4>Modeling & Architecture</h4>
+                    <div class="tags">
+                        <span class="tag">UML 2.0</span>
+                        <span class="tag">Rational Rose Real Time</span>
+                        <span class="tag">MagicDraw</span>
+                        <span class="tag">Visual Paradigm</span>
+                    </div>
+                </div>
+                <div class="skills-group">
+                    <h4>Testing Frameworks & Environments</h4>
+                    <div class="tags">
+                        <span class="tag">JUnit</span>
+                        <span class="tag">IBM Rational Functional Tester</span>
+                        <span class="tag">JaBUTi</span>
+                        <span class="tag">ModelJunit</span>
+                        <span class="tag">IBM Quality Manager</span>
+                        <span class="tag">Eclipse</span>
+                        <span class="tag">Linux</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Dr. Vikas Panthi. All Rights Reserved. Hosted on GitHub Pages.</p>
+    </footer>
+
+</body>
+</html>
