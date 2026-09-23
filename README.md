@@ -28,4 +28,4 @@ The notes are concise original summaries and are **publicly readable and copyabl
 4. Link to the live Pages URL from your GitHub profile and academic profiles.
 5. Check `site:YOUR-EXACT-PAGES-URL` after Google has crawled it. Search position is not guaranteed.
 
-Once the permanent Pages URL is known, canonical tags and a sitemap can use that exact address.
+The exact Pages URL is `https://vikaspanthi.github.io/vikasProfile/`. Canonical links and `sitemap.xml` now use this address. In Search Console, submit `https://vikaspanthi.github.io/vikasProfile/sitemap.xml` under **Sitemaps** and inspect `https://vikaspanthi.github.io/vikasProfile/` under **URL Inspection**. A sitemap helps discovery but does not guarantee indexing or a higher position.
