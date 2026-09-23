@@ -4,371 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dr. Vikas Panthi | Comprehensive Academic Profile & Node</title>
-    <style>
-        :root {
-            --bg-deep: #030712;
-            --bg-cyber: rgba(17, 24, 39, 0.75);
-            --bg-card: rgba(31, 41, 55, 0.4);
-            --accent-neon: #06b6d4;
-            --accent-matrix: #10b981;
-            --accent-gold: #f59e0b;
-            --text-neon: #e2e8f0;
-            --text-dim: #94a3b8;
-            --border-neon: rgba(6, 182, 212, 0.2);
-            --glow-color: rgba(6, 182, 212, 0.3);
-        }
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: 'Courier New', Courier, monospace, -apple-system, BlinkMacSystemFont, sans-serif;
-            background-color: var(--bg-deep);
-            color: var(--text-neon);
-            overflow-x: hidden;
-            line-height: 1.6;
-        }
-
-        body::before {
-            content: '';
-            position: fixed;
-            top: -10%;
-            left: -10%;
-            width: 120%;
-            height: 120%;
-            background: radial-gradient(circle, rgba(6, 182, 212, 0.04) 0%, transparent 70%);
-            z-index: -1;
-            pointer-events: none;
-        }
-
-        /* Nav HUD Center */
-        .hud-nav {
-            position: sticky;
-            top: 15px;
-            max-width: 1200px;
-            margin: 0 auto;
-            background: var(--bg-cyber);
-            backdrop-filter: blur(12px);
-            border: 1px solid var(--border-neon);
-            border-radius: 30px;
-            padding: 0.75rem 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            z-index: 100;
-            box-shadow: 0 0 15px var(--border-neon);
-        }
-
-        .hud-logo {
-            font-weight: bold;
-            color: var(--accent-neon);
-            letter-spacing: 2px;
-            font-size: 0.95rem;
-        }
-
-        .hud-links {
-            display: flex;
-            gap: 1rem;
-            flex-wrap: wrap;
-        }
-
-        .hud-links a {
-            color: var(--text-dim);
-            text-decoration: none;
-            font-size: 0.8rem;
-            text-transform: uppercase;
-            transition: all 0.3s;
-        }
-
-        .hud-links a:hover {
-            color: var(--accent-neon);
-            text-shadow: 0 0 8px var(--accent-neon);
-        }
-
-        /* Hero Node Window */
-        .console-hero {
-            max-width: 1200px;
-            margin: 3rem auto 2rem auto;
-            padding: 0 1.5rem;
-        }
-
-        .terminal-window {
-            background: rgba(3, 7, 18, 0.95);
-            border: 1px solid var(--border-neon);
-            border-radius: 12px;
-            box-shadow: 0 10px 35px rgba(0, 0, 0, 0.6), 0 0 25px rgba(6, 182, 212, 0.15);
-            overflow: hidden;
-        }
-
-        .terminal-header {
-            background: #0f172a;
-            padding: 0.75rem 1rem;
-            border-bottom: 1px solid var(--border-neon);
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .dot { width: 12px; height: 12px; border-radius: 50%; }
-        .dot-r { background: #ef4444; }
-        .dot-y { background: #eab308; }
-        .dot-g { background: #22c55e; }
-        .terminal-title { margin-left: auto; font-size: 0.75rem; color: var(--text-dim); letter-spacing: 1px; }
-
-        .terminal-body {
-            padding: 2rem;
-        }
-
-        .terminal-text {
-            color: var(--accent-matrix);
-            margin-bottom: 0.5rem;
-            font-size: 0.95rem;
-        }
-
-        .terminal-input {
-            color: var(--text-neon);
-            font-size: 2.2rem;
-            font-weight: bold;
-            margin-bottom: 0.5rem;
-        }
-
-        .terminal-sub {
-            color: var(--text-dim);
-            font-size: 1.1rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .contact-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 1rem;
-            margin-top: 1.5rem;
-            border-top: 1px dashed var(--border-neon);
-            padding-top: 1.5rem;
-        }
-
-        .contact-node {
-            font-size: 0.85rem;
-            color: var(--text-neon);
-        }
-
-        .contact-node span {
-            color: var(--accent-neon);
-        }
-
-        /* Highlights Dashboard */
-        .metrics-row {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 1.5rem;
-            max-width: 1200px;
-            margin: 0 auto 3rem auto;
-            padding: 0 1.5rem;
-        }
-
-        .metric-card {
-            background: var(--bg-cyber);
-            border: 1px solid var(--border-neon);
-            padding: 1.5rem;
-            border-radius: 12px;
-            text-align: center;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-        }
-
-        .metric-num {
-            font-size: 1.8rem;
-            font-weight: bold;
-            color: var(--accent-matrix);
-            margin-bottom: 0.25rem;
-        }
-
-        .metric-label {
-            font-size: 0.8rem;
-            color: var(--text-dim);
-            text-transform: uppercase;
-        }
-
-        /* Layout Main Containers */
-        .main-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 1.5rem 5rem 1.5rem;
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 3rem;
-        }
-
-        .cyber-card {
-            background: var(--bg-cyber);
-            backdrop-filter: blur(10px);
-            border: 1px solid var(--border-neon);
-            border-radius: 16px;
-            padding: 2.5rem;
-            position: relative;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
-        }
-
-        .card-tag {
-            position: absolute;
-            top: -12px;
-            right: 25px;
-            background: var(--bg-deep);
-            border: 1px solid var(--border-neon);
-            color: var(--accent-neon);
-            font-size: 0.75rem;
-            padding: 0.2rem 0.75rem;
-            border-radius: 4px;
-            letter-spacing: 1px;
-        }
-
-        h2 {
-            font-size: 1.4rem;
-            color: #ffffff;
-            margin-bottom: 2rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            border-bottom: 1px solid var(--border-neon);
-            padding-bottom: 0.5rem;
-        }
-
-        h2::before {
-            content: '>>';
-            color: var(--accent-neon);
-        }
-
-        h3 {
-            font-size: 1.1rem;
-            color: var(--accent-neon);
-            margin: 1.5rem 0 1rem 0;
-        }
-
-        /* Education Table Node */
-        .table-responsive {
-            overflow-x: auto;
-            margin-top: 1rem;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            font-size: 0.85rem;
-            text-align: left;
-        }
-
-        th, td {
-            padding: 0.75rem 1rem;
-            border: 1px solid var(--border-neon);
-        }
-
-        th {
-            background: rgba(6, 182, 212, 0.1);
-            color: var(--accent-neon);
-            text-transform: uppercase;
-        }
-
-        tr:nth-child(even) {
-            background: rgba(255, 255, 255, 0.02);
-        }
-
-        /* Items Styles */
-        .data-node {
-            border-left: 2px solid var(--border-neon);
-            padding-left: 1.25rem;
-            margin-bottom: 1.75rem;
-            position: relative;
-        }
-
-        .data-node:hover {
-            border-color: var(--accent-neon);
-        }
-
-        .node-meta {
-            font-size: 0.8rem;
-            color: var(--accent-gold);
-            font-weight: bold;
-        }
-
-        .node-title {
-            font-size: 1.1rem;
-            color: #ffffff;
-            margin: 0.2rem 0;
-        }
-
-        .node-subtitle {
-            font-size: 0.9rem;
-            color: var(--text-dim);
-        }
-
-        .node-details {
-            font-size: 0.85rem;
-            color: var(--text-dim);
-            margin-top: 0.4rem;
-        }
-
-        .numbered-list {
-            list-style: none;
-        }
-
-        .numbered-list li {
-            position: relative;
-            padding-left: 2rem;
-            margin-bottom: 1rem;
-            font-size: 0.9rem;
-        }
-
-        .numbered-list li::before {
-            content: attr(data-index) ".";
-            position: absolute;
-            left: 0;
-            color: var(--accent-neon);
-            font-weight: bold;
-        }
-
-        .badge-cloud {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.6rem;
-            margin-top: 1rem;
-        }
-
-        .cyber-badge {
-            background: rgba(6, 182, 212, 0.05);
-            border: 1px solid var(--border-neon);
-            color: var(--text-neon);
-            padding: 0.4rem 0.8rem;
-            border-radius: 6px;
-            font-size: 0.8rem;
-        }
-
-        .flex-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.5rem;
-        }
-
-        footer {
-            text-align: center;
-            padding: 4rem 2rem;
-            font-size: 0.8rem;
-            color: var(--text-dim);
-            border-top: 1px solid var(--border-neon);
-            background: #010409;
-            letter-spacing: 1px;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div class="reading-progress" aria-hidden="true"></div>
 
     <!-- Top HUD Navigation Matrix -->
     <nav class="hud-nav">
-        <div class="hud-logo"></div>
+        <div class="hud-logo">//PANTHI.FULL_ARCHIVE</div>
         <div class="hud-links">
             <a href="#identity">Identity</a>
             <a href="#edu">Education</a>
@@ -377,6 +20,12 @@
             <a href="#intellect">Intellect</a>
             <a href="#publications">Publications</a>
             <a href="#skills">Skills</a>
+            <div class="palette-picker" role="group" aria-label="Choose accent color">
+                <span>Color</span>
+                <button type="button" class="palette-dot" data-color="sky" aria-label="Sky blue palette" aria-pressed="true"></button>
+                <button type="button" class="palette-dot" data-color="mint" aria-label="Mint green palette" aria-pressed="false"></button>
+                <button type="button" class="palette-dot" data-color="peach" aria-label="Soft peach palette" aria-pressed="false"></button>
+            </div>
         </div>
     </nav>
 
@@ -387,10 +36,10 @@
                 <div class="dot dot-r"></div>
                 <div class="dot dot-y"></div>
                 <div class="dot dot-g"></div>
-                <div class="terminal-title"> </div>
+                <div class="terminal-title">cv_parser --all_records --active</div>
             </div>
             <div class="terminal-body">
-                <div class="terminal-text"></div>
+                <div class="terminal-text">Parsing Curriculum Vitae data... [SUCCESS]</div>
                 <div class="terminal-input">Dr. Vikas Panthi</div>
                 <div class="terminal-sub">Senior Assistant Professor (HOD-BCE)</div>
                 <div class="terminal-text" style="color: var(--text-dim);">
@@ -583,6 +232,11 @@
         <section class="cyber-card" id="publications">
             <div class="card-tag">SEC_06</div>
             <h2>Academic Publication Log (Peer-Reviewed)</h2>
+            <div class="publication-controls">
+                <label for="publication-search">Search publications</label>
+                <input id="publication-search" type="search" placeholder="Search title, author, year or venue" autocomplete="off">
+                <output id="publication-count" aria-live="polite"></output>
+            </div>
             
             <h3>International / National Journals</h3>
             <ul class="numbered-list">
@@ -735,9 +389,11 @@
 
     </main>
 
+    <button class="back-top" type="button" aria-label="Back to top" title="Back to top">↑</button>
     <footer>
         <p>// COMPREHENSIVE RECORDS COMPILED. HOSTED AND PROTECTED VIA GITHUB PLATFORMS &copy; 2026.</p>
     </footer>
 
+    <script src="script.js" defer></script>
 </body>
 </html>
