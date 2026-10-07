@@ -29,3 +29,36 @@ The notes are concise original summaries and are **publicly readable and copyabl
 5. Check `site:YOUR-EXACT-PAGES-URL` after Google has crawled it. Search position is not guaranteed.
 
 The exact Pages URL is `https://vikaspanthi.github.io/vikasProfile/`. Canonical links and `sitemap.xml` now use this address. In Search Console, submit `https://vikaspanthi.github.io/vikasProfile/sitemap.xml` under **Sitemaps** and inspect `https://vikaspanthi.github.io/vikasProfile/` under **URL Inspection**. A sitemap helps discovery but does not guarantee indexing or a higher position.
+
+
+## Applications dropdown (October 2026)
+
+Every profile and notes page now has an Applications dropdown. The included
+Relative Grade Analytics application is in `apps/relative-grade-analytics/`.
+Its original analysis code and documentation are preserved; a Website return
+link has been added. Excel parsing and charts use external CDN libraries, so
+an internet connection is required. Consult its README for expected input data.
+
+### Add another HTML application
+
+1. Create a folder such as `apps/my-new-tool/`.
+2. Put the application HTML there as `index.html`, together with its CSS,
+   JavaScript, images, and other required files. Use relative asset paths.
+3. Edit `applications-config.js` and add another object to the array, separated
+   from the previous object by a comma:
+   `{ title: "My New Tool", path: "apps/my-new-tool/index.html" }`
+4. Upload the folder and updated config to your GitHub repository. All six
+   website menus automatically use this list; no navigation HTML edits needed.
+5. Open the deployed site and test the new link. Refresh if an old menu is cached.
+
+GitHub Pages supports browser HTML/CSS/JavaScript applications. Applications
+requiring a Python/Node server or private credentials need a separate backend.
+Never put passwords or secret API keys in public website files.
+
+### Upload this update
+
+Extract the ZIP and upload the contents of `vikasProfile-main/` to the repository
+root (do not upload only the ZIP or an extra enclosing folder). Keep GitHub Pages
+set to the existing main branch and root folder. This package does not deploy
+automatically. The nested `vikas-panthi-profile-website.zip` is an optional copy
+of the same website and is not needed for hosting.

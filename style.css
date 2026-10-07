@@ -614,3 +614,19 @@
 .resource-credit { margin: 1.3rem 0; color: #71808c; font-size: .85rem; }
 @media (max-width: 550px) { .resource-list a { gap: .5rem; align-items: flex-start; }
     .resource-code { min-width: 75px; font-size: .7rem; } }
+
+/* Extendable applications dropdown. Outside the scrolling navigation links. */
+.hud-nav { gap: .75rem; }
+.hud-links { flex: 1; min-width: 0; }
+.applications-menu { position: relative; flex-shrink: 0; font-size: .8rem; }
+.applications-menu summary { cursor: pointer; list-style: none; padding: .55rem .8rem; border: 1px solid #bdd3e9; border-radius: 20px; color: #174e87; background: #edf5ff; font-weight: 700; white-space: nowrap; }
+.applications-menu summary::-webkit-details-marker { display: none; }
+.applications-menu summary span { display: inline-block; margin-left: .4rem; transition: transform .2s; }
+.applications-menu[open] summary span { transform: rotate(180deg); }
+.applications-menu summary:focus-visible, .applications-list a:focus-visible { outline: 3px solid #3177bb; outline-offset: 3px; }
+.applications-list { position: absolute; right: 0; top: calc(100% + .5rem); width: 260px; max-width: calc(100vw - 56px); max-height: 60vh; overflow-y: auto; list-style: none; padding: .45rem; margin: 0; border: 1px solid #cbdcec; border-radius: 14px; background: #fff; box-shadow: 0 14px 35px rgba(30,60,90,.16); z-index: 110; animation: app-menu-enter .18s ease-out; }
+.applications-list a { display: block; padding: .75rem; border-radius: 9px; text-decoration: none; color: #21476c; line-height: 1.4; }
+.applications-list a:hover { background: #edf5ff; }
+@keyframes app-menu-enter { from { opacity: 0; transform: translateY(-5px); } to { opacity: 1; transform: translateY(0); } }
+@media (max-width: 700px) { .applications-list { left: 0; right: auto; } }
+@media (prefers-reduced-motion: reduce) { .applications-list { animation: none; } .applications-menu summary span { transition: none; } }
